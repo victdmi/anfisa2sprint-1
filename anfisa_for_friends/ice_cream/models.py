@@ -14,6 +14,7 @@ class Category(PublishedModel):
 
     def __str__(self):
         return self.title
+    
 
 
 class Topping(PublishedModel):
@@ -29,7 +30,10 @@ class Topping(PublishedModel):
 
 
 class Wrapper(PublishedModel):
-    title = models.CharField(max_length=256)
+    title = models.CharField(
+        max_length=256,
+        help_text='Уникальное название обёртки, не более 256 символов'
+    )
 
     class Meta:
         verbose_name = 'Обёртка'
